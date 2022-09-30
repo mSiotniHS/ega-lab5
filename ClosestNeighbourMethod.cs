@@ -25,6 +25,8 @@ public static class ClosestNeighbourMethod
 			unvisitedCities.Remove(closestCity);
 		}
 
+		distance += matrix[solution.Last(), solution.First()];
+
 		return (solution, distance);
 	}
 }
