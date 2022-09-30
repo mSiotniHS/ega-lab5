@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace ega_lab5;
@@ -16,11 +17,17 @@ public static class ClosestNeighbourMethod
 
 		while (unvisitedCities.Count > 0)
 		{
+			Console.WriteLine($"> Итерация №{solution.Count}  |  Текущий маршрут: {string.Join(" -> ", solution)}");
+
 			var currentCity = solution.Last();
 			var closestCity = unvisitedCities.MinBy(x => matrix[currentCity, x]);
 
+			Console.WriteLine($"> Отобранный город: {closestCity}, расстояние: {matrix[currentCity, closestCity]}");
+
 			solution.Add(closestCity);
 			distance += matrix[currentCity, closestCity];
+
+			Console.WriteLine($"> Текущее расстояние: {distance}\n");
 
 			unvisitedCities.Remove(closestCity);
 		}
