@@ -36,9 +36,5 @@ public sealed class DistanceMatrix<T>
 		return jump + idx;
 	}
 
-	public T this[int from, int to]
-	{
-		get => _data[ConvertIndex(from, to)];
-		set => _data[ConvertIndex(from, to)] = value;
-	}
+	public T this[int from, int to] => _data[ConvertIndex(from, to)];
 }
