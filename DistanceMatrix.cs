@@ -5,18 +5,18 @@ namespace ega_lab5;
 public sealed class DistanceMatrix<T>
 {
 	private readonly T[] _data;
-	public int PointCount { get; }
+	public int CityCount { get; }
 
-	public DistanceMatrix(int pointCount)
+	public DistanceMatrix(int cityCount)
 	{
-		PointCount = pointCount;
-		_data = new T[PointCount * (PointCount - 1) / 2];
+		CityCount = cityCount;
+		_data = new T[CityCount * (CityCount - 1) / 2];
 	}
 
-	public DistanceMatrix(int pointCount, T[] data)
+	public DistanceMatrix(int cityCount, T[] data)
 	{
-		PointCount = pointCount;
-		if (data.Length != PointCount * (PointCount - 1) / 2)
+		CityCount = cityCount;
+		if (data.Length != CityCount * (CityCount - 1) / 2)
 			throw new ArgumentException("Invalid data length");
 		_data = data;
 	}
@@ -31,7 +31,7 @@ public sealed class DistanceMatrix<T>
 		}
 
 		var idx = j - i - 1;
-		var jump = Convert.ToInt32(Utilities.APSum(PointCount - 1, -1, i));
+		var jump = Convert.ToInt32(Utilities.APSum(CityCount - 1, -1, i));
 
 		return jump + idx;
 	}

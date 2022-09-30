@@ -9,7 +9,7 @@ public static class ClosestNeighbourMethod
 	{
 		var solution = new List<int> { firstCity };
 
-		var unvisitedCities = Enumerable.Range(0, matrix.PointCount).ToList();
+		var unvisitedCities = Enumerable.Range(0, matrix.CityCount).ToList();
 		unvisitedCities.Remove(firstCity);
 
 		var distance = 0;
