@@ -6,7 +6,6 @@ public static class Utilities
 {
 	private static readonly Random Random = new();
 
-	public static int GetRandom() => Random.Next();
 	public static int GetRandom(int max) => Random.Next(max);
 	public static int GetRandom(int min, int max) => Random.Next(min, max);
 

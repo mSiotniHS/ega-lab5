@@ -7,12 +7,6 @@ public sealed class DistanceMatrix<T>
 	private readonly T[] _data;
 	public int CityCount { get; }
 
-	public DistanceMatrix(int cityCount)
-	{
-		CityCount = cityCount;
-		_data = new T[CityCount * (CityCount - 1) / 2];
-	}
-
 	public DistanceMatrix(int cityCount, T[] data)
 	{
 		CityCount = cityCount;
