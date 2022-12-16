@@ -22,7 +22,7 @@ internal static class Program
 
 	private static (int, IEnumerable<int>) FromFile()
 	{
-		var lines = File.ReadLines("matrix.txt");
+		var lines = File.ReadLines("matrix15.txt");
 
 		var i = 0;
 		var distances = new List<int>();

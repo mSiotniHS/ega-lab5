@@ -8,10 +8,11 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <None Remove="matrix.txt" />
-      <Content Include="matrix.txt">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      </Content>
+        <None Remove="matrix15.txt"/>
+        <ContentWithTargetPath Include="matrix15.txt">
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+            <TargetPath>matrix15.txt</TargetPath>
+        </ContentWithTargetPath>
     </ItemGroup>
 
 </Project>

@@ -17,12 +17,14 @@ public static class ClosestNeighbourMethod
 
 		while (unvisitedCities.Count > 0)
 		{
-			Console.WriteLine($"> Итерация №{solution.Count}  |  Текущий маршрут: {string.Join(" -> ", solution)}");
+			var tmpRoute = string.Join(" -> ", solution);
+			Console.WriteLine($"> Итерация №{solution.Count}  |  Текущий: {tmpRoute}");
 
 			var currentCity = solution.Last();
 			var closestCity = unvisitedCities.MinBy(x => matrix[currentCity, x]);
 
-			Console.WriteLine($"> Отобранный город: {closestCity}, расстояние: {matrix[currentCity, closestCity]}");
+			var tmpDistance = matrix[currentCity, closestCity];
+			Console.WriteLine($"> Отобранный город: {closestCity}, расстояние: {tmpDistance}");
 
 			solution.Add(closestCity);
 			distance += matrix[currentCity, closestCity];
